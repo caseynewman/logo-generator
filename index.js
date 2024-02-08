@@ -49,7 +49,9 @@ inquirer
     .then((input) => {
         const filename = `logo.svg`;
 
-        fs.writeFile(filename, JSON.stringify(input, null, '\t'), (err) =>
+        const newInput = new CLI
+
+        fs.writeFile(filename, new CLI(input, null, '\t'), (err) =>
         err ? console.log(err) : console.log('Generated logo.svg!')
       );
     });
