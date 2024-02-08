@@ -1,6 +1,6 @@
 {
-	"logo-text": "cnn",
-	"text-color": "pink",
+	"logoText": "CNN",
+	"textColor": "pink",
 	"shape": "Triangle",
-	"shape-color": "green"
+	"shapeColor": "black"
 }
