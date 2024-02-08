@@ -2,25 +2,6 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const shapes = require('./lib/shapes');
 
-class CLI {
-    constructor() {
-        this.textInput = '';
-        this.logoShape = '';
-    }
-
-    render() {
-        return `<svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">${this.createShape()}</svg>`
-    }
-
-    createText(logoText, textColor) {
-        this.textInput = `<text x="150" y="125" font-size="60" fill="${textColor}">${logoText}</text>`
-    }
-
-    createShape(shape) {
-        this.logoShape = shape.render();
-    }
-}
-
 inquirer
     .prompt([
         {
@@ -46,10 +27,22 @@ inquirer
         }
     ])
 
-    .then((input) => {
+    .then((logoText, textColor, shape, shapeColor) => {
         const filename = `logo.svg`;
 
-        fs.writeFile(filename, render(input, null, '\t'), (err) =>
+        if(shape === 'Triangle') {
+            const newTriangle = new Triangle(text, textColor, shape, shapeColor)
+        };
+
+        if(shape === 'Circle') {
+            const newCircle = new Circle(text, textColor, shape, shapeColor)
+        };
+
+        if(shape === 'Square') {
+            const newSquare = new Square(text, textColor, shape, shapeColor)
+        };
+
+        fs.writeFile(filename, SVG.render(input, null, '\t'), (err) =>
         err ? console.log(err) : console.log('Generated logo.svg!')
       );
     });
