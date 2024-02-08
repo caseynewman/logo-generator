@@ -9,7 +9,7 @@ class CLI {
     }
 
     render() {
-        return `<svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>`
+        return `<svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">${this.createShape()}</svg>`
     }
 
     createText(logoText, textColor) {
@@ -49,9 +49,7 @@ inquirer
     .then((input) => {
         const filename = `logo.svg`;
 
-        const newInput = new CLI
-
-        fs.writeFile(filename, new CLI(input, null, '\t'), (err) =>
+        fs.writeFile(filename, render(input, null, '\t'), (err) =>
         err ? console.log(err) : console.log('Generated logo.svg!')
       );
     });
