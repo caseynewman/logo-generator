@@ -33,28 +33,24 @@ inquirer
         if (data.logoText.length > 3) {
             console.log('Your text must be no more than 3 characters in length!')
             return
+        } else {
+            if (data.shape === 'Triangle') {
+                // const newTriangle = new Triangle(text, textColor, shape, shapeColor);
+                console.log('its a triangle')
+            } else if (data.shape === 'Circle') {
+                // const newCircle = new Circle(text, textColor, shape, shapeColor);
+                console.log(newCircle)
+            } else if (data.shape === 'Square') {
+                // const newSquare = new Square(text, textColor, shape, shapeColor);
+                console.log(newSquare)
+            };
         }
 
-        if (data.shape.value === 'Triangle' && data.logoText.length > 3) {
-            const newTriangle = new Triangle(text, textColor, shape, shapeColor);
-            return newTriangle
-        };
-
-        if (data.shape.value === 'Circle' && data.logoText.length > 3) {
-            const newCircle = new Circle(text, textColor, shape, shapeColor);
-            return newCircle
-        };
-
-        if (data.shape.value === 'Square' && data.logoText.length > 3) {
-            const newSquare = new Square(text, textColor, shape, shapeColor);
-            return newSquare
-        };
-
         fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-        err ? console.log(err) : console.log('Generated logo.svg!')
+            err ? console.log(err) : console.log('Generated logo.svg!')
 
-      );
-      console.log(data)
-      console.log(data.logoText.length)
+        );
+        console.log(data)
+        console.log(data.shape)
 
     });
