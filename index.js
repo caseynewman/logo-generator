@@ -30,22 +30,25 @@ inquirer
     .then((input) => {
         const filename = `logo.svg`;
 
-        if(shape === 'Triangle') {
+        if(this.shape === 'Triangle') {
             const newTriangle = new Triangle(text, textColor, shape, shapeColor);
             return newTriangle
         };
 
-        if(shape === 'Circle') {
+        if(this.shape === 'Circle') {
             const newCircle = new Circle(text, textColor, shape, shapeColor);
             return newCircle
         };
 
-        if(shape === 'Square') {
+        if(this.shape === 'Square') {
             const newSquare = new Square(text, textColor, shape, shapeColor);
             return newSquare
         };
 
         fs.writeFile(filename, JSON.stringify(input, null, '\t'), (err) =>
         err ? console.log(err) : console.log('Generated logo.svg!')
+
       );
+      console.log(input)
+
     });
