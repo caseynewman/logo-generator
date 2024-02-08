@@ -38,6 +38,6 @@ inquirer
         const filename = `logo.svg`;
 
         fs.writeFile(filename, JSON.stringify(input, null, '\t'), (err) =>
-        err ? console.log(err) : console.log('Success!')
+        err ? console.log(err) : console.log('Generated logo.svg!')
       );
     });
