@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const shapes = require('./lib/shapes');
+const {SVG, Triangle, Circle, Square} = require('./lib/shapes');
 
 inquirer
     .prompt([
@@ -8,6 +8,12 @@ inquirer
             type: 'input',
             name: 'logoText',
             message: 'Enter text for your logo (must be no longer than 3 characters):',
+            validate: function(input, answers) {
+                if (input.length > 3) {
+                    return 'Must not be longer than 3 characters!'
+                }
+                return true
+            }
         },
         {
             type: 'input',
@@ -29,28 +35,24 @@ inquirer
 
     .then((data) => {
         const filename = `logo.svg`;
+        let shape;
+        let svg = new SVG();
 
-        if (data.logoText.length > 3) {
-            console.log('Your text must be no more than 3 characters in length!')
-            return
-        } else {
             if (data.shape === 'Triangle') {
-                // const newTriangle = new Triangle(text, textColor, shape, shapeColor);
-                console.log('its a triangle')
-            } else if (data.shape === 'Circle') {
-                // const newCircle = new Circle(text, textColor, shape, shapeColor);
-                console.log(newCircle)
-            } else if (data.shape === 'Square') {
-                // const newSquare = new Square(text, textColor, shape, shapeColor);
-                console.log(newSquare)
+                shape = new Triangle(data.logoText, data.textColor, data.shapeColor);
+            }
+            if (data.shape === 'Circle') {
+                shape = new Circle(data.logoText, data.textColor, data.shapeColor);
+            }
+            if (data.shape === 'Square') {
+                shape = new Square(data.logoText, data.textColor, data.shapeColor);
             };
-        }
 
-        fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
+            svg.createText(data.logoText, data.textColor);
+            svg.createShape(shape);
+
+        fs.writeFile(filename, svg.render(), (err) =>
             err ? console.log(err) : console.log('Generated logo.svg!')
 
         );
-        console.log(data)
-        console.log(data.shape)
-
     });
