@@ -18,7 +18,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Enter your text color',
+            message: 'Enter a font color or HEX code',
             name: 'text-color',
         },
         {
@@ -29,7 +29,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Enter a color for your shape',
+            message: 'Enter a color or HEX code for your shape',
             name: 'shape-color',
         }
     ])
