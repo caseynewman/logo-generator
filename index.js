@@ -27,22 +27,25 @@ inquirer
         }
     ])
 
-    .then((logoText, textColor, shape, shapeColor) => {
+    .then((input) => {
         const filename = `logo.svg`;
 
         if(shape === 'Triangle') {
-            const newTriangle = new Triangle(text, textColor, shape, shapeColor)
+            const newTriangle = new Triangle(text, textColor, shape, shapeColor);
+            return newTriangle
         };
 
         if(shape === 'Circle') {
-            const newCircle = new Circle(text, textColor, shape, shapeColor)
+            const newCircle = new Circle(text, textColor, shape, shapeColor);
+            return newCircle
         };
 
         if(shape === 'Square') {
-            const newSquare = new Square(text, textColor, shape, shapeColor)
+            const newSquare = new Square(text, textColor, shape, shapeColor);
+            return newSquare
         };
 
-        fs.writeFile(filename, SVG.render(input, null, '\t'), (err) =>
+        fs.writeFile(filename, JSON.stringify(input, null, '\t'), (err) =>
         err ? console.log(err) : console.log('Generated logo.svg!')
       );
     });
