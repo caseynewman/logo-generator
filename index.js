@@ -7,12 +7,12 @@ inquirer
         {
             type: 'input',
             name: 'logoText',
-            message: 'Enter text for your logo (must be no longer than 3 characters).',
+            message: 'Enter text for your logo (must be no longer than 3 characters):',
         },
         {
             type: 'input',
             name: 'textColor',
-            message: 'Enter a font color or HEX code',
+            message: 'Enter a font color or HEX code:',
         },
         {
             type: 'list',
@@ -23,32 +23,38 @@ inquirer
         {
             type: 'input',
             name: 'shapeColor',
-            message: 'Enter a color or HEX code for your shape',
+            message: 'Enter a color or HEX code for your shape:',
         }
     ])
 
-    .then((input) => {
+    .then((data) => {
         const filename = `logo.svg`;
 
-        if(this.shape === 'Triangle') {
+        if (data.logoText.length > 3) {
+            console.log('Your text must be no more than 3 characters in length!')
+            return
+        }
+
+        if (data.shape.value === 'Triangle' && data.logoText.length > 3) {
             const newTriangle = new Triangle(text, textColor, shape, shapeColor);
             return newTriangle
         };
 
-        if(this.shape === 'Circle') {
+        if (data.shape.value === 'Circle' && data.logoText.length > 3) {
             const newCircle = new Circle(text, textColor, shape, shapeColor);
             return newCircle
         };
 
-        if(this.shape === 'Square') {
+        if (data.shape.value === 'Square' && data.logoText.length > 3) {
             const newSquare = new Square(text, textColor, shape, shapeColor);
             return newSquare
         };
 
-        fs.writeFile(filename, JSON.stringify(input, null, '\t'), (err) =>
+        fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
         err ? console.log(err) : console.log('Generated logo.svg!')
 
       );
-      console.log(input)
+      console.log(data)
+      console.log(data.logoText.length)
 
     });
