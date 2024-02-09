@@ -14,8 +14,6 @@ The user will open the application in their code editor and open the integrated 
 
 Upon running the code, the user will be prompted with a series of questions about their desired logo. They'll need to enter up to 3 characters for their logo and a color for that text. They'll also be asked what shape they would like their logo to be: a triangle, circle, or square, and what color they would like for that shape. After choosing their criteria, the SVG tag will generate in the logo.svg file. The user can copy the path of that file and run it in their browser, where the logo will appear. The user can save the SVG for personal use.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
 [Screen Recording](https://drive.google.com/file/d/1vQjw88AXVj5wxwd9QV2xYSDsr1E_T0aP/view)
 
 ## Credits
