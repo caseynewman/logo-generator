@@ -4,13 +4,11 @@
 
 The command line Logo Generator was built so that the user could generate a simple logo by entering their desired criteria in the terminal. A benefit of this application is that the user needs no previous knowledge of design in order to generate a logo that meets their criteria.
 
-In building this project, I learned how to use the inquirer package, fs, and jest. I also gained a better understanding of object-oriented programming and the benefits of using classes. I also learned how to write and run tests for my code.
+In building this project, I learned how to use the inquirer package, fs, and jest. I also gained a better understanding of object-oriented programming and the benefits of using classes. I also learned how to write and run tests for my code. I worked with SVGs for the first time, and practiced using coordinates to position the shapes and text.
 
 ## Installation
 
-
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+The user will open the application in their code editor and open the integrated terminal. After running npm install, the user will type 'node index.js' in the command line. They'll then be prompted with criteria questions for their logo.
 
 ## Usage
 
@@ -18,16 +16,12 @@ Upon running the code, the user will be prompted with a series of questions abou
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
 
-![alt text](assets/images/screenshot.png)
+[Screen Recording](https://drive.google.com/file/d/1vQjw88AXVj5wxwd9QV2xYSDsr1E_T0aP/view)
 
 ## Credits
 
-
-
-My tutor, John Titus, helped me gain a better understanding of OOP and how arguments are utilized.
+My tutor, John Titus, helped me gain a better understanding of OOP, classes, and their arguments.
 
 ## Tests
 
-
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+To run tests for this application, type 'npm run test' into the command line.
