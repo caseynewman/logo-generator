@@ -4,7 +4,7 @@
 
 The command line Logo Generator was built so that the user could generate a simple logo by entering their desired criteria in the terminal. A benefit of this application is that the user needs no previous knowledge of design in order to generate a logo that meets their criteria.
 
-In building this project, I learned how to use the inquirer package, fs, and jest. I also gained a better understanding of object-oriented programming and the benefits of using classes. I also learned how to write and run tests for my code. I worked with SVGs for the first time, and practiced using coordinates to position the shapes and text.
+In building this project, I learned how to use the Inquirer package, fs, and Jest. I also gained a better understanding of object-oriented programming and the benefits of using classes. I also learned how to write and run tests for my code. I worked with SVGs for the first time, and practiced using coordinates to position the shapes and text.
 
 ## Installation
 
@@ -22,4 +22,4 @@ My tutor, John Titus, helped me gain a better understanding of OOP, classes, and
 
 ## Tests
 
-To run tests for this application, type 'npm run test' into the command line.
+This application uses Jest for running unit tests for each shape. To run tests for this application, type 'npm run test' into the command line.
